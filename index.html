@@ -1,12 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" href="/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>jasonyin-project-demo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
 <body>
-  test jasonyin-project-demo
+alpha:<span id="alpha"></span><br/>
+beta:<span id="beta"></span><br/>
+gamma:<span id="gamma"></span><br/>
 </body>
+<script>
+
+  var updateGravity = function(event) {
+    console.log("alpha:",event.alpha); // X
+    console.log("beta:",event.beta); // Y
+    console.log("gamma:",event.gamma); // Z
+    var a = document.getElementById('alpha'),
+        b = document.getElementById('beta'),
+        g = document.getElementById('gamma'),
+        alpha = event.alpha,
+        beta = event.beta,
+        gamma = event.gamma;
+
+    a.innerHTML = Math.round(alpha);
+    b.innerHTML = Math.round(beta);
+    g.innerHTML = Math.round(gamma);
+  };
+  window.addEventListener('deviceorientation', updateGravity, false);
+
+</script>
 </html>
